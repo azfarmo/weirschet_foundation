@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+        {%for person in people.items%}
+        <br>
+        <div id = "peoplehelp">
+        <div id = 'name'>
+            <h1>
+            {{person.name}}
+            </h1>
+        </div>
+        <div id = 'place'>
+            <p3 class = 'text-muted'>
+                Location : {{person.location}}
+            </p3>
+        </div>
+        <div id = 'allergies'>
+     <p4 class = 'text-muted'>
+            Allergies : {{person.allergies}}
+            </p4>
+            <br>
+            <p5 class = 'text-muted'>
+                Contact : {{person.contact}}
+            </p5>
+            <hr>
+        </div>
+        </div>
+        {%endfor%}
+        {% for page_num in people.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+      {% if page_num %}
+        {% if people.page == page_num %}
+          <a class="btn btn-info mb-4" href="{{ url_for('home', page=page_num) }}">{{ page_num }}</a>
+        {% else %}
+          <a class="btn btn-outline-info mb-4" href="{{ url_for('home', page=page_num) }}">{{ page_num }}</a>
+        {% endif %}
+      {% else %}
+        ...
+      {% endif %}
+    {% endfor %}
+    {%endblock content%}
