@@ -31,4 +31,5 @@ class Post(db.Model):
     contact = db.Column(db.String(20))
     def __repr__(self):
         return f"Post('{self.id}', '{self.date_posted}')"
+db.create_all()
     

@@ -10,6 +10,7 @@ from flask_login import login_user, current_user, logout_user, login_required
 app.config['SECRET_KEY'] = '3tyyqty291757125ashfwqhvqjtvwq'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/newblog.db'
 bcrypt = Bcrypt(app)
+db.create_all()
 from models import User
 post= [
     {'name':'Jill',
