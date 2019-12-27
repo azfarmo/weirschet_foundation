@@ -12,7 +12,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/newblog.db'
 bcrypt = Bcrypt(app)
 from models import User
 post= [
-    {'name':'Jack',
+    {'name':'Jill',
     'place':'New Jersey',
     'allergies':'Peanuts'},
     {'name':'Jill',
