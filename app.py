@@ -106,3 +106,5 @@ def new_post():
         return redirect(url_for('home'))
     return render_template('create_post.html', title='New Post',
                            form=form, legend='New Post')
+if __name__ == "__main__":
+    app.run(debug=True)
