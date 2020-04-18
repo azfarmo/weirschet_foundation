@@ -108,4 +108,4 @@ def new_post():
     return render_template('create_post.html', title='New Post',
                            form=form, legend='New Post')
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0',debug=True)
